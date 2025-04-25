@@ -1,0 +1,27 @@
+# spice_puzzle.py
+
+import random
+
+def spice_puzzle():
+    words = ['spice', 'edition', 'flavor', 'pepper', 'hot', 'sauce', 'heat', 'season', 'taste', 'zesty']
+    word = random.choice(words)
+    scrambled = ''.join(random.sample(word, len(word)))
+
+    print("\nWelcome to the Spice Puzzle Game!")
+    print("Unscramble the word:")
+    print(f"Scrambled Word: {scrambled}")
+
+    tries = 3
+    while tries > 0:
+        guess = input("Your guess: ").strip().lower()
+        if guess == word:
+            print("\nCorrect! You're on fire!")
+            break
+        else:
+            tries -= 1
+            print(f"Wrong! {tries} tries left.")
+    else:
+        print(f"\nGame Over! The word was: {word}")
+
+if __name__ == "__main__":
+    spice_puzzle()
